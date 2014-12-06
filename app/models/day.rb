@@ -1,6 +1,6 @@
 class Day < ActiveRecord::Base
   belongs_to :user
 
-  validates :rating, :date
-  
+  validates :rating, :date, presence: true
+
 end

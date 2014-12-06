@@ -26,6 +26,7 @@
         <section class="top-bar-section">
         <ul class="right">
             <% if user_signed_in? %>
+              <li class="has-form"><a href="#" data-reveal-id="myModal" class="button radius">Rating My Day</a></li>
               <li><%= image_tag current_user.image, size: "50x50" %></li>
               <li class="divider"></li>
               <li><%=link_to "@#{current_user.username}", "#{current_user.url}", target: "_blank" %> </li>

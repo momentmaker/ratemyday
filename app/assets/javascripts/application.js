@@ -18,5 +18,16 @@
 $(function(){ $(document).foundation(); });
 
 $('input').on('change', function () {
-  alert('Rating: ' + $(this).val());
+  // alert('Rating: ' + $(this).val());
+  $.ajax({
+    url : "/days",
+    type: "POST",
+    data : {"day": {"rating": $(this).val()}},
+    success: function(data, textStatus, jqXHR) {
+      location.reload();
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      alert("Oops. Something went wrong...")
+    }
+  });
 });
