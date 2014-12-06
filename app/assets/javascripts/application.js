@@ -12,5 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require foundation
+//= require bootstrap-rating.min
+
+$(function(){ $(document).foundation(); });
+
+$('input').on('change', function () {
+  alert('Rating: ' + $(this).val());
+});

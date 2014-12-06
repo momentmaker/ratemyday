@@ -1,0 +1,10 @@
+<a href="#" data-reveal-id="myModal" class="button radius">Rating My Day</a>
+<div class="text-center">
+<div id="myModal" class="reveal-modal" data-reveal>
+  <div class="text-center">
+    <% messages = ["How was your day playa?", "What upppp homie?", "Keeping it real?", "Going hard?", "Living it up?"] %>
+    <h2><%= messages.sample %></h2>
+    <input type="hidden" class="rating" data-filled="fa fa-heart fa-3x" data-empty="fa fa-heart-o fa-3x" data-start="1" data-stop="11"/>
+  </div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>

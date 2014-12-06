@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     set_current_user(user)
     flash[:notice] = "Successfully signed in as #{user.username}."
 
-    redirect_to transactions_path
+    redirect_to days_path
   end
 
   def destroy
