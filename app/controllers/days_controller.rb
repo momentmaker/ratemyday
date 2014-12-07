@@ -3,6 +3,8 @@ class DaysController < ApplicationController
 
   def index
     @days = Day.all
+    @chart_data = all_days_data(@days)
+    gon.linechart_data = @chart_data
   end
 
   def create

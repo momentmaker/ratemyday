@@ -30,4 +30,12 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def all_days_data(days)
+    data = []
+    days.each do |day|
+      data << [(day.date.to_time.to_i.to_s + "000").to_i, day.rating]
+    end
+    data
+  end
 end

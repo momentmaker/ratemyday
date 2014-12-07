@@ -14,11 +14,12 @@
 //= require jquery_ujs
 //= require foundation
 //= require bootstrap-rating.min
+//= require highcharts
+//= require charts
 
 $(function(){ $(document).foundation(); });
 
 $('input').on('change', function () {
-  // alert('Rating: ' + $(this).val());
   $.ajax({
     url : "/days",
     type: "POST",

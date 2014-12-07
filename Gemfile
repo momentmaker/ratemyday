@@ -41,3 +41,5 @@ gem 'pry-rails', group: :development
 gem 'omniauth-twitter'
 gem 'foundation-rails'
 gem 'font-awesome-rails'
+gem "highcharts-rails", "~> 3.0.0"
+gem 'gon'
