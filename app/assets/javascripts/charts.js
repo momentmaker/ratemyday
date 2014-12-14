@@ -13,14 +13,9 @@ $(document).ready(function() {
         },
 
         xAxis: [{
-
                 dateTimeLabelFormats: {
                 day: '%e of %b'
             },
-                /*dateTimeLabelFormats:{
-                  month:'%Y',
-                  year:'%Y'
-                },*/
               type:"datetime"
           }],
 
@@ -36,10 +31,10 @@ $(document).ready(function() {
         },
 
         plotOptions: {
-    series: {
-        pointRange: 24 * 3600 * 1000 // one day
-    }
-},
+            series: {
+                pointRange: 24 * 3600 * 1000 // one day
+            }
+        },
 
         series: [{
             name: 'Day Rating',
