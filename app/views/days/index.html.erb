@@ -1,4 +1,14 @@
-<div id="line-chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<% if user_signed_in? %>
+<div class="row">
+  <div class="medium-12 large-6 columns"><div id="line-chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div></div>
+  <div class="medium-12 large-6 columns"><div id="pie-chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div></div>
+</div>
+<% else %>
+  <div class="text-center">
+    <h1>Yoo! Welcome to RateMyDay!</h1>
+    <h3>Please <%= link_to 'sign in', user_sign_in_path %> to start rate your day.</h3>
+  </div>
+<% end %>
 
 <div class="text-center">
 <div id="myModal" class="reveal-modal" data-reveal>
