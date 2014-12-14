@@ -49,4 +49,8 @@ class ApplicationController < ActionController::Base
     end
     data
   end
+
+  def check_today_submission(days)
+    days.where(date: Date.current).count > 0 ? true : false
+  end
 end

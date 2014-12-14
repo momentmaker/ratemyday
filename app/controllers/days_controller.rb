@@ -7,6 +7,7 @@ class DaysController < ApplicationController
     @pie_data = day_ratings_avg_data(@days)
     gon.linechart_data = @line_data
     gon.piechart_data= @pie_data
+    @already_submitted = check_today_submission(@days)
   end
 
   def create

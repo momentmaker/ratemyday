@@ -1,21 +1,33 @@
 <% if user_signed_in? %>
-<div class="row">
-  <div class="medium-12 large-6 columns"><div id="line-chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div></div>
-  <div class="medium-12 large-6 columns"><div id="pie-chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div></div>
-</div>
-<% else %>
+  <% if @days.length == 0 %>
   <div class="text-center">
-    <h1>Yoo! Welcome to RateMyDay!</h1>
-    <h3>Please <%= link_to 'sign in', user_sign_in_path %> to start rate your day.</h3>
+    <h1>You have no rating data yet...</h1>
+    <h3>Submit your first one to start tracking your days</h3>
   </div>
+  <% else %>
+  <div class="row">
+    <div class="medium-12 large-6 columns"><div id="line-chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div></div>
+    <div class="medium-12 large-6 columns"><div id="pie-chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div></div>
+  </div>
+  <% end %>
+<% else %>
+<div class="text-center">
+  <h1>Yoo! Welcome to RateMyDay!</h1>
+  <h3>Please <%= link_to 'sign in', user_sign_in_path %> to start rate your day.</h3>
+</div>
 <% end %>
 
 <div class="text-center">
 <div id="myModal" class="reveal-modal" data-reveal>
   <div class="text-center">
+    <% if @already_submitted %>
+    <h2>Dude... You've already submitted for today.</h2>
+    <h3>Check in tomorrow. I like your eagerness :)</h3>
+    <% else %>
     <% messages = ["How was your day playa?", "What upppp homie?", "Keeping it real?", "Going hard?", "Living it up?"] %>
     <h2><%= messages.sample %></h2>
-    <input type="hidden" class="rating" data-filled="fa fa-heart fa-3x" data-empty="fa fa-heart-o fa-3x" data-start="1" data-stop="11"/>
+    <input type="hidden" style="cursor: hand" class="rating" data-filled="fa fa-heart fa-3x" data-empty="fa fa-heart-o fa-3x" data-start="1" data-stop="11"/>
+    <% end %>
   </div>
   <a class="close-reveal-modal">&#215;</a>
 </div>
