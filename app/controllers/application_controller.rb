@@ -35,8 +35,17 @@ class ApplicationController < ActionController::Base
     data = []
     days.each do |day|
       data << [(day.date.to_time.to_i.to_s + "000").to_i - 18000000, day.rating]
-      # data << [day.date.to_time.to_i, day.rating]
-      # binding.pry
+    end
+    data
+  end
+
+  def day_ratings_avg_data(days)
+    data = []
+    rating = 1
+    while rating <= 10
+      rating_pct = days.where(rating: rating).count / days.length.to_f * 100
+      data << [rating.to_s, rating_pct]
+      rating += 1
     end
     data
   end

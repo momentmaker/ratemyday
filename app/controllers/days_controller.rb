@@ -3,8 +3,10 @@ class DaysController < ApplicationController
 
   def index
     @days = Day.all.order(:date).where(user_id: current_user)
-    @chart_data = all_days_data(@days)
-    gon.linechart_data = @chart_data
+    @line_data = all_days_data(@days)
+    @pie_data = day_ratings_avg_data(@days)
+    gon.linechart_data = @line_data
+    gon.piechart_data= @pie_data
   end
 
   def create
