@@ -25,11 +25,7 @@ $('input').on('change', function () {
     type: "POST",
     data : {"day": {"rating": $(this).val()}},
     success: function(data, textStatus, jqXHR) {
-      if(data.id === null) {
-        alert("Please submit your rating at the end of the day.")
-      } else {
-        location.reload();
-      }
+      location.reload();
     },
     error: function (jqXHR, textStatus, errorThrown) {
       alert("Oops. Something went wrong...")

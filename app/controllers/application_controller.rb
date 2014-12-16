@@ -34,7 +34,8 @@ class ApplicationController < ActionController::Base
   def all_days_data(days)
     data = []
     days.each do |day|
-      data << [(day.date.to_time.to_i.to_s + "000").to_i - 18000000, day.rating]
+      binding.pry
+      data << [(day.date.to_time.to_i.to_s + "000").to_i, day.rating]
     end
     data
   end
